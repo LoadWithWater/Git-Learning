@@ -33,7 +33,7 @@
     브랜치 합치기
     최종적으로 개발을 이어갈 브랜치로 이동 후, 합치려는 브랜치명을 입력하면 합칠 수 있다.
 
-
+-----
 ● git branch -d 브랜치명
     merge가 완료된 브랜치명을 삭제할 수 있다
 ● git branch -D 브랜치명
@@ -58,3 +58,30 @@ squash & merge
 ● git merge --squash '합치려는 브랜치명'
     일반 merge에 squash만 들어감
     이 옵션을 사용하면 일반 merge에서 사용했던 사이드 브랜치들이 log에 나타나지 않아 깔끔해진다.
+-----
+
+● git restore 파일명
+    파일 복구
+● git restore --source '커밋ID' '파일명'
+    특정 commit 시점으로 파일 복구
+● git restore --staged 파일명
+    특정 파일명 스테이징 취소
+
+● git revert 커밋ID '커밋ID(여러개 추가가능)'
+    특정 commit을 취소
+● git revert HEAD
+    최근 commit 취소 가능
+※ merge commit도 취소 가능
+
+● git reset --hard '커밋ID'
+    해당 커밋ID 시점으로 되돌리기
+    restore와의 차이점은 restore는 해당 파일만 복구하지만
+    reset은 해당 시점으로 되돌리기 때문에 앞에 작업한 commit이 있을경우 없어버릴 수 있다.
+    ex) a, b, c 파일을 차례대로 만들고 b 파일을 만든 시점으로 리셋하면 c는 삭제된다.
+    hard리셋은 협업시엔 위험하므로 잘 쓰이지 않는다.
+● git reset --soft '커밋ID'
+    리셋인데 변동사항을 지우지 않고 스테이징 해놓는다.
+    ex) a, b, c 파일을 차례대로 만들고 b 파일을 만든 시점으로 리셋하면 c는 남아있고 b는 스테이징된 상태이다.
+● git reset --mixed '커밋ID'
+    리셋인데 변동사항을 지우지 않고 unstage 해놓는다.
+    ex) a, b, c 파일을 차례대로 만들고 b 파일을 만든 시점으로 리셋하면 c는 남아있고 b는 스테이징되지 않은 상태이다.
