@@ -76,7 +76,7 @@ squash & merge
 ● git reset --hard '커밋ID'
     해당 커밋ID 시점으로 되돌리기
     restore와의 차이점은 restore는 해당 파일만 복구하지만
-    reset은 해당 시점으로 되돌리기 때문에 앞에 작업한 commit이 있을경우 없어버릴 수 있다.
+    reset은 해당 시점으로 되돌리기 때문에 앞에 작업한 commit이 있을경우 없어버릴 수 있다. 로그까지 삭제된다.
     ex) a, b, c 파일을 차례대로 만들고 b 파일을 만든 시점으로 리셋하면 c는 삭제된다.
     hard리셋은 협업시엔 위험하므로 잘 쓰이지 않는다.
 ● git reset --soft '커밋ID'
