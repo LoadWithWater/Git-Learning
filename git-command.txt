@@ -1,3 +1,5 @@
+기본
+-----
 ● git add 파일명
     staging area로 이동
 ● git commit -m "메시지 내용입력"
@@ -8,7 +10,11 @@
     스테이징된 파일을 취소    
 
 참고 : 파일을 staging area로 이동하는 것을 '스테이징'이라고 한다.
+-----
 
+
+상태확인, 브랜치
+-----
 ● git status
     상태창 보기
 ● git log --all --oneline
@@ -32,7 +38,10 @@
 ● git merge 합치려는 브랜치명
     브랜치 합치기
     최종적으로 개발을 이어갈 브랜치로 이동 후, 합치려는 브랜치명을 입력하면 합칠 수 있다.
+-----
 
+
+Merge
 -----
 ● git branch -d 브랜치명
     merge가 완료된 브랜치명을 삭제할 수 있다
@@ -60,6 +69,9 @@ squash & merge
     이 옵션을 사용하면 일반 merge에서 사용했던 사이드 브랜치들이 log에 나타나지 않아 깔끔해진다.
 -----
 
+
+복구
+-----
 ● git restore 파일명
     파일 복구
 ● git restore --source '커밋ID' '파일명'
@@ -85,8 +97,11 @@ squash & merge
 ● git reset --mixed '커밋ID'
     리셋인데 변동사항을 지우지 않고 unstage 해놓는다.
     ex) a, b, c 파일을 차례대로 만들고 b 파일을 만든 시점으로 리셋하면 c는 남아있고 b는 스테이징되지 않은 상태이다.
+-----
 
 
+Push, Pull
+-----
 ● git push -u '원격저장소주소' '올릴 로컬 브랜치명'
     로컬저장소 → 원격저장소 업로드
     원격저장소주소는 .git으로 끝나는 주소를 복사하거나 일반 주소창을 복사해도 된다.
@@ -111,8 +126,11 @@ squash & merge
 ● git fetch
     원격저장소에 있는 commit 중에 로컬에 없는 신규 commit을 가져오라는 뜻
     이는 가져오기만 하고 실제로 병합하지는 않는다.
+-----
 
 
+Stash
+-----
 ● git stash
     코드 임시저장
     commit한 코드를 임시저장 할 수 있다
@@ -135,3 +153,4 @@ squash & merge
 ● git stash -p
     전체 말고 일부코드만 stash
     파일을 훑어주면서 stash할지 의견을 물어보는데 y/n으로 대답하면된다.
+-----
